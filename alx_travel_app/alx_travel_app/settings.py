@@ -77,3 +77,13 @@ TEMPLATES = [
     },
 ]
 
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
+# (Optional for dev) - where collectstatic will gather files
+STATICFILES_DIRS = []
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Media files (if you want to handle uploads later)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / "media"
