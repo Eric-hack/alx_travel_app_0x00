@@ -1,11 +1,9 @@
-from django.urls import path
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import ListingViewSet, BookingViewSet
 
-@api_view(["GET"])
-def hello(request):
-    return Response({"message": "Welcome to Listings API"})
+router = DefaultRouter()
+router.register(r'listings', ListingViewSet, basename='listing')
+router.register(r'bookings', BookingViewSet, basename='booking')
 
-urlpatterns = [
-    path('', hello),
-]
+urlpatterns = router.urls
